@@ -10,7 +10,7 @@ import CoreLocation
 import os
 
 protocol JCLocationManagerDelegate: class {
-    func locationManager(_ north: Double, direction: Double)
+    func locationManager(_ fromNorth: Double, direction: Double)
 }
 
 class JCLocationManager: NSObject {

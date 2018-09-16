@@ -11,18 +11,35 @@ import os
 
 class JCPointer: UIView {
     private var pointerLayer: CAShapeLayer?
+    private var pointerColor: UIColor = UIColor.red
+    var color: UIColor {
+        set {
+            self.pointerColor = newValue
+            self.pointerLayer?.strokeColor = newValue.cgColor
+        }
+        
+        get {
+            return self.pointerColor
+        }
+    }
     
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-//    override func draw(_ rect: CGRect) {
-//        self.drawLine()
-//
-//    }
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        self.commonInit()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        self.commonInit()
+    }
+    
+    private func commonInit() {
+        self.backgroundColor = UIColor.clear
+    }
     
     func drawLine(_ angel: Double) {
-//    func drawLine(_ point: CGPoint) {
-//        let path = UIBezierPath(arcCenter: CGPoint(x: self.bounds.midX, y: self.bounds.midY), radius: self.bounds.height / 2.0, startAngle: 0, endAngle: CGFloat(direction), clockwise: true)
-        
         let centerX = Double(self.bounds.width) / 2.0
         let centerY = Double(self.bounds.height) / 2.0
         
@@ -68,11 +85,13 @@ class JCPointer: UIView {
         }
         
         self.pointerLayer?.removeFromSuperlayer()
-        self.pointerLayer = CAShapeLayer.init()
-        self.pointerLayer?.frame = self.bounds
-        pointerLayer?.path = path.cgPath
-        pointerLayer?.strokeColor = UIColor.red.cgColor
-        pointerLayer?.fillColor = UIColor.clear.cgColor
-        self.layer.addSublayer(self.pointerLayer!)
+        let newLayer = CAShapeLayer.init()
+        newLayer.frame = self.bounds
+        newLayer.path = path.cgPath
+        newLayer.strokeColor = self.pointerColor.cgColor
+        newLayer.fillColor = UIColor.clear.cgColor
+        self.layer.addSublayer(newLayer)
+        
+        self.pointerLayer = newLayer
     }
 }
