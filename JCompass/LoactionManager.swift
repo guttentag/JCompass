@@ -7,7 +7,7 @@
 //
 
 import CoreLocation
-import os
+import os.log
 
 protocol JCLocationManagerDelegate: class {
     func locationManager(_ fromNorth: Double, direction: Double)

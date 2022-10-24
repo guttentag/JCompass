@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		01B4DC2C214E206300AD9C90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B4DC2B214E206300AD9C90 /* AppDelegate.swift */; };
 		01B4DC2E214E206300AD9C90 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B4DC2D214E206300AD9C90 /* ViewController.swift */; };
 		01B4DC31214E206300AD9C90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01B4DC2F214E206300AD9C90 /* Main.storyboard */; };
 		01B4DC33214E206400AD9C90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01B4DC32214E206400AD9C90 /* Assets.xcassets */; };
@@ -15,11 +14,12 @@
 		01B4DC3F214E207800AD9C90 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01B4DC3E214E207800AD9C90 /* CoreLocation.framework */; };
 		01B4DC41214E20BC00AD9C90 /* LoactionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B4DC40214E20BC00AD9C90 /* LoactionManager.swift */; };
 		01B4DC43214E524D00AD9C90 /* JCPointer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B4DC42214E524D00AD9C90 /* JCPointer.swift */; };
+		C0C1A2472906AB0B009F149C /* MainApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C1A2462906AB0B009F149C /* MainApp.swift */; };
+		C0C1A2492906AB76009F149C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C1A2482906AB76009F149C /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		01B4DC28214E206300AD9C90 /* JCompass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JCompass.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		01B4DC2B214E206300AD9C90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01B4DC2D214E206300AD9C90 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		01B4DC30214E206300AD9C90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		01B4DC32214E206400AD9C90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -28,6 +28,8 @@
 		01B4DC3E214E207800AD9C90 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		01B4DC40214E20BC00AD9C90 /* LoactionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoactionManager.swift; sourceTree = "<group>"; };
 		01B4DC42214E524D00AD9C90 /* JCPointer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JCPointer.swift; sourceTree = "<group>"; };
+		C0C1A2462906AB0B009F149C /* MainApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainApp.swift; sourceTree = "<group>"; };
+		C0C1A2482906AB76009F149C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,14 +64,12 @@
 		01B4DC2A214E206300AD9C90 /* JCompass */ = {
 			isa = PBXGroup;
 			children = (
-				01B4DC2B214E206300AD9C90 /* AppDelegate.swift */,
-				01B4DC2D214E206300AD9C90 /* ViewController.swift */,
-				01B4DC2F214E206300AD9C90 /* Main.storyboard */,
+				C0C1A24A2906ABB2009F149C /* Deprecated */,
+				C0C1A2462906AB0B009F149C /* MainApp.swift */,
+				C0C1A2482906AB76009F149C /* ContentView.swift */,
 				01B4DC32214E206400AD9C90 /* Assets.xcassets */,
-				01B4DC34214E206400AD9C90 /* LaunchScreen.storyboard */,
 				01B4DC37214E206400AD9C90 /* Info.plist */,
 				01B4DC40214E20BC00AD9C90 /* LoactionManager.swift */,
-				01B4DC42214E524D00AD9C90 /* JCPointer.swift */,
 			);
 			path = JCompass;
 			sourceTree = "<group>";
@@ -80,6 +80,17 @@
 				01B4DC3E214E207800AD9C90 /* CoreLocation.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C0C1A24A2906ABB2009F149C /* Deprecated */ = {
+			isa = PBXGroup;
+			children = (
+				01B4DC2D214E206300AD9C90 /* ViewController.swift */,
+				01B4DC2F214E206300AD9C90 /* Main.storyboard */,
+				01B4DC34214E206400AD9C90 /* LaunchScreen.storyboard */,
+				01B4DC42214E524D00AD9C90 /* JCPointer.swift */,
+			);
+			path = Deprecated;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,8 +166,9 @@
 			files = (
 				01B4DC43214E524D00AD9C90 /* JCPointer.swift in Sources */,
 				01B4DC2E214E206300AD9C90 /* ViewController.swift in Sources */,
+				C0C1A2492906AB76009F149C /* ContentView.swift in Sources */,
 				01B4DC41214E20BC00AD9C90 /* LoactionManager.swift in Sources */,
-				01B4DC2C214E206300AD9C90 /* AppDelegate.swift in Sources */,
+				C0C1A2472906AB0B009F149C /* MainApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,7 +246,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -290,7 +302,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
