@@ -11,16 +11,30 @@ import os
 
 class ViewController: UIViewController {
     private var locationManager: JCLocationManager!
-    private var northLineView: JCPointer!
-    private var jLine: JCPointer!
+    private var northLineView: JCPointer = .init()
+    private var jLine: JCPointer = .init()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
-        let width = UIScreen.main.bounds.width - 5
+        self.northLineView.color = UIColor.red
+        self.northLineView.clipsToBounds = true
+        self.view.addSubview(northLineView)
+        
+        self.jLine.color = UIColor.black
+        self.jLine.clipsToBounds = true
+        self.view.addSubview(jLine)
+        
+        self.locationManager = JCLocationManager.init(self)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        let margin: CGFloat = 20
+        let width = UIScreen.main.bounds.width - (margin * 2)
         let midY = UIScreen.main.bounds.midY
-        let lineFrame = CGRect(x: 0, y: midY - (width / 2.0), width: width, height: width)
+        let lineFrame = CGRect(x: margin, y: midY - (width / 2.0), width: width, height: width)
         
         self.northLineView = JCPointer(frame: lineFrame)
         self.northLineView.color = UIColor.red
