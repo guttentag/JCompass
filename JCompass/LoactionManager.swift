@@ -25,7 +25,7 @@ class JCLocationManager: NSObject {
     public init(_ withDelegate: JCLocationManagerDelegate) {
         self.delegate = withDelegate
         self.clManager = CLLocationManager()
-        self.privateQueue = DispatchQueue(label: "LocationManagerQprivateueue")
+        self.privateQueue = DispatchQueue(label: "LocationManagerPrivatQeueue")
         self.authorizationStatus = .notDetermined
         super.init()
         self.clManager.delegate = self
