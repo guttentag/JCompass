@@ -64,12 +64,12 @@
 		01B4DC2A214E206300AD9C90 /* JCompass */ = {
 			isa = PBXGroup;
 			children = (
-				C0C1A24A2906ABB2009F149C /* Deprecated */,
 				C0C1A2462906AB0B009F149C /* MainApp.swift */,
 				C0C1A2482906AB76009F149C /* ContentView.swift */,
+				C0C1A24B2906AC55009F149C /* Localtion */,
+				C0C1A24A2906ABB2009F149C /* Deprecated */,
 				01B4DC32214E206400AD9C90 /* Assets.xcassets */,
 				01B4DC37214E206400AD9C90 /* Info.plist */,
-				01B4DC40214E20BC00AD9C90 /* LoactionManager.swift */,
 			);
 			path = JCompass;
 			sourceTree = "<group>";
@@ -91,6 +91,14 @@
 				01B4DC42214E524D00AD9C90 /* JCPointer.swift */,
 			);
 			path = Deprecated;
+			sourceTree = "<group>";
+		};
+		C0C1A24B2906AC55009F149C /* Localtion */ = {
+			isa = PBXGroup;
+			children = (
+				01B4DC40214E20BC00AD9C90 /* LoactionManager.swift */,
+			);
+			path = Localtion;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
