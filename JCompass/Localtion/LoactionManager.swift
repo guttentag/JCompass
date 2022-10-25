@@ -17,31 +17,36 @@ class JCLocationManager: NSObject {
     private static let destination = CLLocation(latitude: CLLocationDegrees(31.778000), longitude: CLLocationDegrees(35.235359))
     private let clManager: CLLocationManager
     private let privateQueue: DispatchQueue
-    private var authorizationStatus: CLAuthorizationStatus
+    private(set) var authorizationStatus: CLAuthorizationStatus
     private var currentHeading: CLHeading?
     private var currentLocation: CLLocation?
-    private unowned let delegate: JCLocationManagerDelegate
+    private unowned var delegate: JCLocationManagerDelegate?
     
-    public init(_ withDelegate: JCLocationManagerDelegate) {
-        self.delegate = withDelegate
+    override init() {
         self.clManager = CLLocationManager()
         self.privateQueue = DispatchQueue(label: "LocationManagerPrivatQeueue")
         self.authorizationStatus = .notDetermined
         super.init()
+        
         self.clManager.delegate = self
         self.requestAuthorization()
     }
+    
+    func setDelegate(_ delegate: JCLocationManagerDelegate) {
+        self.delegate = delegate
+    }
+    
+    // TODO start/stop methods
 }
 
 private extension JCLocationManager {
     func requestAuthorization() {
-        os_log("LM request")
+        os_log(.debug, "LM request")
         clManager.requestWhenInUseAuthorization()
     }
     
     func calculateHeading(_ location: CLLocation, heading: CLHeading) -> CLLocationDegrees {
         let normelizedDegrees = self.getRadiansBearingBetweenTwoPoints1(point1: location, point2: JCLocationManager.destination)
-//        os_log("ML direction %d %d %d", location.course, heading.trueHeading, normelizedDegrees)
         
         return normelizedDegrees
     }
@@ -59,7 +64,6 @@ private extension JCLocationManager {
         let x = cos(lat1) * sin(lat2) - sin(lat1) * cos(lat2) * cos(dLon)
         let radiansBearing = atan2(y, x)
         
-//        return radiansToDegrees(radians: radiansBearing)
         return radiansBearing
     }
     
@@ -69,7 +73,6 @@ private extension JCLocationManager {
 
 extension JCLocationManager: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-//        os_log("ML authorization changed %d", status.rawValue)
         self.privateQueue.sync {
             self.authorizationStatus = status
             switch status {
@@ -85,18 +88,17 @@ extension JCLocationManager: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        os_log("LM location updated")
+        os_log("LM location updated. accuracy \(String(describing: manager.location?.horizontalAccuracy))")
         self.privateQueue.sync {
             self.currentLocation = locations.first
             guard let location = self.currentLocation, let heading = self.currentHeading else {
-                os_log("LM location or heading is missing")
+                os_log(.error, "LM location or heading is missing")
                 return
             }
             
             let degrees = self.calculateHeading(location, heading: heading)
             let direction = self.degreesToRadians(degrees: heading.trueHeading)
-//            os_log("LM heading updated %d %d", newHeading.x, newHeading.y)
-            self.delegate.locationManager(direction, direction: degrees)
+            self.delegate?.locationManager(direction, direction: degrees)
         }
     }
     
@@ -106,18 +108,17 @@ extension JCLocationManager: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
-        os_log("LM heading updated")
+        os_log("LM heading updated. accuracy: \(newHeading.headingAccuracy)")
         self.privateQueue.sync {
             self.currentHeading = newHeading
             guard let location = self.currentLocation, let heading = self.currentHeading else {
-                os_log("LM location or heading is missing")
+                os_log(.error, "LM location or heading is missing")
                 return
             }
             
             let direction = self.calculateHeading(location, heading: heading)
             let north = self.degreesToRadians(degrees: /*Double(360) - */heading.trueHeading)
-//            os_log("LM heading updated %f %f %f", north, heading.trueHeading, heading.magneticHeading)
-            self.delegate.locationManager(north, direction: direction)
+            self.delegate?.locationManager(north, direction: direction)
         }
     }
 }

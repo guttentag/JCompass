@@ -7,29 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		01B4DC2E214E206300AD9C90 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B4DC2D214E206300AD9C90 /* ViewController.swift */; };
-		01B4DC31214E206300AD9C90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01B4DC2F214E206300AD9C90 /* Main.storyboard */; };
 		01B4DC33214E206400AD9C90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01B4DC32214E206400AD9C90 /* Assets.xcassets */; };
-		01B4DC36214E206400AD9C90 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01B4DC34214E206400AD9C90 /* LaunchScreen.storyboard */; };
 		01B4DC3F214E207800AD9C90 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01B4DC3E214E207800AD9C90 /* CoreLocation.framework */; };
 		01B4DC41214E20BC00AD9C90 /* LoactionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B4DC40214E20BC00AD9C90 /* LoactionManager.swift */; };
-		01B4DC43214E524D00AD9C90 /* JCPointer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B4DC42214E524D00AD9C90 /* JCPointer.swift */; };
 		C0C1A2472906AB0B009F149C /* MainApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C1A2462906AB0B009F149C /* MainApp.swift */; };
 		C0C1A2492906AB76009F149C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C1A2482906AB76009F149C /* ContentView.swift */; };
+		C0C1A24E2906AD49009F149C /* PointerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C1A24D2906AD49009F149C /* PointerView.swift */; };
+		C0C1A2502906B53A009F149C /* PointerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C1A24F2906B53A009F149C /* PointerViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		01B4DC28214E206300AD9C90 /* JCompass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JCompass.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		01B4DC2D214E206300AD9C90 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		01B4DC30214E206300AD9C90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		01B4DC32214E206400AD9C90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		01B4DC35214E206400AD9C90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		01B4DC37214E206400AD9C90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01B4DC3E214E207800AD9C90 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		01B4DC40214E20BC00AD9C90 /* LoactionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoactionManager.swift; sourceTree = "<group>"; };
-		01B4DC42214E524D00AD9C90 /* JCPointer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JCPointer.swift; sourceTree = "<group>"; };
 		C0C1A2462906AB0B009F149C /* MainApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainApp.swift; sourceTree = "<group>"; };
 		C0C1A2482906AB76009F149C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C0C1A24D2906AD49009F149C /* PointerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointerView.swift; sourceTree = "<group>"; };
+		C0C1A24F2906B53A009F149C /* PointerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointerViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,8 +62,8 @@
 			children = (
 				C0C1A2462906AB0B009F149C /* MainApp.swift */,
 				C0C1A2482906AB76009F149C /* ContentView.swift */,
+				C0C1A24C2906AD25009F149C /* PointerView */,
 				C0C1A24B2906AC55009F149C /* Localtion */,
-				C0C1A24A2906ABB2009F149C /* Deprecated */,
 				01B4DC32214E206400AD9C90 /* Assets.xcassets */,
 				01B4DC37214E206400AD9C90 /* Info.plist */,
 			);
@@ -82,23 +78,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C0C1A24A2906ABB2009F149C /* Deprecated */ = {
-			isa = PBXGroup;
-			children = (
-				01B4DC2D214E206300AD9C90 /* ViewController.swift */,
-				01B4DC2F214E206300AD9C90 /* Main.storyboard */,
-				01B4DC34214E206400AD9C90 /* LaunchScreen.storyboard */,
-				01B4DC42214E524D00AD9C90 /* JCPointer.swift */,
-			);
-			path = Deprecated;
-			sourceTree = "<group>";
-		};
 		C0C1A24B2906AC55009F149C /* Localtion */ = {
 			isa = PBXGroup;
 			children = (
 				01B4DC40214E20BC00AD9C90 /* LoactionManager.swift */,
 			);
 			path = Localtion;
+			sourceTree = "<group>";
+		};
+		C0C1A24C2906AD25009F149C /* PointerView */ = {
+			isa = PBXGroup;
+			children = (
+				C0C1A24D2906AD49009F149C /* PointerView.swift */,
+				C0C1A24F2906B53A009F149C /* PointerViewModel.swift */,
+			);
+			path = PointerView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,9 +153,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01B4DC36214E206400AD9C90 /* LaunchScreen.storyboard in Resources */,
 				01B4DC33214E206400AD9C90 /* Assets.xcassets in Resources */,
-				01B4DC31214E206300AD9C90 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,34 +164,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01B4DC43214E524D00AD9C90 /* JCPointer.swift in Sources */,
-				01B4DC2E214E206300AD9C90 /* ViewController.swift in Sources */,
+				C0C1A2502906B53A009F149C /* PointerViewModel.swift in Sources */,
 				C0C1A2492906AB76009F149C /* ContentView.swift in Sources */,
 				01B4DC41214E20BC00AD9C90 /* LoactionManager.swift in Sources */,
+				C0C1A24E2906AD49009F149C /* PointerView.swift in Sources */,
 				C0C1A2472906AB0B009F149C /* MainApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		01B4DC2F214E206300AD9C90 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				01B4DC30214E206300AD9C90 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		01B4DC34214E206400AD9C90 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				01B4DC35214E206400AD9C90 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		01B4DC38214E206400AD9C90 /* Debug */ = {
