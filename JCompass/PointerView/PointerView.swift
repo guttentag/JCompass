@@ -49,11 +49,13 @@ struct PointerView: View {
             Image("shoe_print")
                 .renderingMode(.template)
                 .resizable()
-                .foregroundColor(.green)
+                .foregroundColor(.pointerPrimary)
                 .frame(width: shoeSize, height: shoeSize)
             if showArrow {
                 Image(systemName: "chevron.up")
+                    .renderingMode(.template)
                     .resizable(resizingMode: .stretch)
+                    .foregroundColor(.pointerPrimary)
                     .frame(width: arrowSize.width, height: arrowSize.height)
                     .offset(y: -((shoeSize / 2) + arrowSize.height))
             }

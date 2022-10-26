@@ -14,6 +14,7 @@
 		C0C1A2492906AB76009F149C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C1A2482906AB76009F149C /* ContentView.swift */; };
 		C0C1A24E2906AD49009F149C /* PointerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C1A24D2906AD49009F149C /* PointerView.swift */; };
 		C0C1A2502906B53A009F149C /* PointerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C1A24F2906B53A009F149C /* PointerViewModel.swift */; };
+		C0C1A25429093863009F149C /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C1A25329093863009F149C /* Color+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		C0C1A2482906AB76009F149C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C0C1A24D2906AD49009F149C /* PointerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointerView.swift; sourceTree = "<group>"; };
 		C0C1A24F2906B53A009F149C /* PointerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointerViewModel.swift; sourceTree = "<group>"; };
+		C0C1A25329093863009F149C /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,12 +62,10 @@
 		01B4DC2A214E206300AD9C90 /* JCompass */ = {
 			isa = PBXGroup;
 			children = (
-				C0C1A2462906AB0B009F149C /* MainApp.swift */,
-				C0C1A2482906AB76009F149C /* ContentView.swift */,
+				C0C1A25229093843009F149C /* App */,
 				C0C1A24C2906AD25009F149C /* PointerView */,
 				C0C1A24B2906AC55009F149C /* Localtion */,
-				01B4DC32214E206400AD9C90 /* Assets.xcassets */,
-				01B4DC37214E206400AD9C90 /* Info.plist */,
+				C0C1A2512909382B009F149C /* Shared */,
 			);
 			path = JCompass;
 			sourceTree = "<group>";
@@ -93,6 +93,25 @@
 				C0C1A24F2906B53A009F149C /* PointerViewModel.swift */,
 			);
 			path = PointerView;
+			sourceTree = "<group>";
+		};
+		C0C1A2512909382B009F149C /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				01B4DC32214E206400AD9C90 /* Assets.xcassets */,
+				C0C1A25329093863009F149C /* Color+Extension.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		C0C1A25229093843009F149C /* App */ = {
+			isa = PBXGroup;
+			children = (
+				C0C1A2462906AB0B009F149C /* MainApp.swift */,
+				C0C1A2482906AB76009F149C /* ContentView.swift */,
+				01B4DC37214E206400AD9C90 /* Info.plist */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,6 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0C1A2502906B53A009F149C /* PointerViewModel.swift in Sources */,
+				C0C1A25429093863009F149C /* Color+Extension.swift in Sources */,
 				C0C1A2492906AB76009F149C /* ContentView.swift in Sources */,
 				01B4DC41214E20BC00AD9C90 /* LoactionManager.swift in Sources */,
 				C0C1A24E2906AD49009F149C /* PointerView.swift in Sources */,
@@ -300,7 +320,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 48D8W284YY;
-				INFOPLIST_FILE = JCompass/Info.plist;
+				INFOPLIST_FILE = JCompass/App/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.navigation";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -323,7 +343,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 48D8W284YY;
-				INFOPLIST_FILE = JCompass/Info.plist;
+				INFOPLIST_FILE = JCompass/App/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.navigation";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
