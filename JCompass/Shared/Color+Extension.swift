@@ -10,4 +10,8 @@ import SwiftUI
 
 extension Color {
     public static var pointerPrimary = Color("PointerGoldPrimary")
+    public static var goldPrimaryDark = Color("GoldPrimaryDark")
+    public static var goldPrimaryLight = Color("GoldPrimaryLight")
+    public static var goldSecondaryDark = Color("GoldSecondaryDark")
+    public static var goldSecondaryLight = Color("GoldSecondaryLight")
 }

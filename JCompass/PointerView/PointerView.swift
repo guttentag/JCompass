@@ -17,16 +17,7 @@ struct PointerView: View {
         GeometryReader { geometry in
             ZStack {
                 Color.clear // This addition makes the image centered in the ZStack
-                VStack(alignment: .center) {
-                    Spacer()
-                    HStack {
-                        Spacer()
-                        Toggle(isOn: $showArrow) {
-                            Text("Show Arrow")
-                        }
-                        .fixedSize(horizontal: true, vertical: false)
-                    }
-                }
+                ArrowToggleView(showArrow: $showArrow)
                     .padding()
                 ShoeprintView(size: geometry.size, showArrow: showArrow)
                     .rotationEffect(.radians(viewModel.angle ?? 0))
@@ -34,6 +25,24 @@ struct PointerView: View {
         }
     }
     
+    private struct ArrowToggleView: View {
+        let showArrow: Binding<Bool>
+        
+        var body: some View {
+            VStack(alignment: .center) {
+                Spacer()
+                HStack {
+                    Spacer()
+                    Toggle(isOn: showArrow) {
+                        Text("Show Arrow")
+                            .foregroundColor(.goldPrimaryLight)
+                    }
+                    .tint(Color.goldPrimaryDark)
+                    .fixedSize(horizontal: true, vertical: false)
+                }
+            }
+        }
+    }
     private struct ShoeprintView: View {
         let shoeSize: CGFloat
         let arrowSize: CGSize
