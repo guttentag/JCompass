@@ -11,12 +11,52 @@ import os.log
 
 struct PointerView: View {
     @ObservedObject var viewModel: PointerViewModel = PointerViewModel()
+    @State var showArrow: Bool = true
     
     var body: some View {
         GeometryReader { geometry in
-            Path() { path in path.addLines(pointerPath(size: geometry.size)) }
-                .stroke(Color.green, lineWidth: 3)
-                .rotationEffect(.radians(viewModel.angle ?? 0))
+            ZStack {
+                Color.clear // This addition makes the image centered in the ZStack
+                VStack(alignment: .center) {
+                    Spacer()
+                    HStack {
+                        Spacer()
+                        Toggle(isOn: $showArrow) {
+                            Text("Show Arrow")
+                        }
+                        .fixedSize(horizontal: true, vertical: false)
+                    }
+                }
+                    .padding()
+                ShoeprintView(size: geometry.size, showArrow: showArrow)
+                    .rotationEffect(.radians(viewModel.angle ?? 0))
+            }
+        }
+    }
+    
+    private struct ShoeprintView: View {
+        let shoeSize: CGFloat
+        let arrowSize: CGSize
+        let showArrow: Bool
+        
+        init(size: CGSize, showArrow: Bool) {
+            self.shoeSize = min(size.width, size.height) * 0.6
+            arrowSize = .init(width: self.shoeSize * 0.7, height: self.shoeSize * 0.3)
+            self.showArrow = showArrow
+        }
+        
+        var body: some View {
+            Image("shoe_print")
+                .renderingMode(.template)
+                .resizable()
+                .foregroundColor(.green)
+                .frame(width: shoeSize, height: shoeSize)
+            if showArrow {
+                Image(systemName: "chevron.up")
+                    .resizable(resizingMode: .stretch)
+                    .frame(width: arrowSize.width, height: arrowSize.height)
+                    .offset(y: -((shoeSize / 2) + arrowSize.height))
+            }
         }
     }
 }
