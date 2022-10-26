@@ -9,7 +9,7 @@
 import CoreLocation
 import os.log
 
-protocol JCLocationManagerDelegate: class {
+protocol JCLocationManagerDelegate: AnyObject {
     func locationManager(_ fromNorth: Double, direction: Double)
 }
 
@@ -82,6 +82,9 @@ extension JCLocationManager: CLLocationManagerDelegate {
             case .denied, .restricted, .notDetermined:
                 self.clManager.stopUpdatingHeading()
                 self.clManager.stopUpdatingLocation()
+            @unknown default:
+                // TODO uknown future handling
+                break;
             }
             // TODO update delegate
         }
