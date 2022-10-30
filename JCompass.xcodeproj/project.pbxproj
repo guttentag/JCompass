@@ -9,12 +9,16 @@
 /* Begin PBXBuildFile section */
 		01B4DC33214E206400AD9C90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01B4DC32214E206400AD9C90 /* Assets.xcassets */; };
 		01B4DC3F214E207800AD9C90 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01B4DC3E214E207800AD9C90 /* CoreLocation.framework */; };
-		01B4DC41214E20BC00AD9C90 /* LoactionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B4DC40214E20BC00AD9C90 /* LoactionManager.swift */; };
+		01B4DC41214E20BC00AD9C90 /* JCLoactionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B4DC40214E20BC00AD9C90 /* JCLoactionManager.swift */; };
 		C0C1A2472906AB0B009F149C /* MainApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C1A2462906AB0B009F149C /* MainApp.swift */; };
 		C0C1A2492906AB76009F149C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C1A2482906AB76009F149C /* ContentView.swift */; };
 		C0C1A24E2906AD49009F149C /* PointerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C1A24D2906AD49009F149C /* PointerView.swift */; };
 		C0C1A2502906B53A009F149C /* PointerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C1A24F2906B53A009F149C /* PointerViewModel.swift */; };
 		C0C1A25429093863009F149C /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C1A25329093863009F149C /* Color+Extension.swift */; };
+		C0E75FC72909A93100D6FEC7 /* OSLog+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E75FC62909A93100D6FEC7 /* OSLog+Extension.swift */; };
+		C0E75FCB2909AE6E00D6FEC7 /* LocationPointer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E75FCA2909AE6E00D6FEC7 /* LocationPointer.swift */; };
+		C0E75FCD2909AF9E00D6FEC7 /* LocationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E75FCC2909AF9E00D6FEC7 /* LocationUtils.swift */; };
+		C0E75FCF2909B7A800D6FEC7 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E75FCE2909B7A800D6FEC7 /* AppViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,12 +26,16 @@
 		01B4DC32214E206400AD9C90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		01B4DC37214E206400AD9C90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01B4DC3E214E207800AD9C90 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		01B4DC40214E20BC00AD9C90 /* LoactionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoactionManager.swift; sourceTree = "<group>"; };
+		01B4DC40214E20BC00AD9C90 /* JCLoactionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JCLoactionManager.swift; sourceTree = "<group>"; };
 		C0C1A2462906AB0B009F149C /* MainApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainApp.swift; sourceTree = "<group>"; };
 		C0C1A2482906AB76009F149C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C0C1A24D2906AD49009F149C /* PointerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointerView.swift; sourceTree = "<group>"; };
 		C0C1A24F2906B53A009F149C /* PointerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointerViewModel.swift; sourceTree = "<group>"; };
 		C0C1A25329093863009F149C /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		C0E75FC62909A93100D6FEC7 /* OSLog+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OSLog+Extension.swift"; sourceTree = "<group>"; };
+		C0E75FCA2909AE6E00D6FEC7 /* LocationPointer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPointer.swift; sourceTree = "<group>"; };
+		C0E75FCC2909AF9E00D6FEC7 /* LocationUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationUtils.swift; sourceTree = "<group>"; };
+		C0E75FCE2909B7A800D6FEC7 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +89,9 @@
 		C0C1A24B2906AC55009F149C /* Localtion */ = {
 			isa = PBXGroup;
 			children = (
-				01B4DC40214E20BC00AD9C90 /* LoactionManager.swift */,
+				01B4DC40214E20BC00AD9C90 /* JCLoactionManager.swift */,
+				C0E75FCA2909AE6E00D6FEC7 /* LocationPointer.swift */,
+				C0E75FCC2909AF9E00D6FEC7 /* LocationUtils.swift */,
 			);
 			path = Localtion;
 			sourceTree = "<group>";
@@ -98,6 +108,7 @@
 		C0C1A2512909382B009F149C /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				C0E75FC52909A91400D6FEC7 /* Logging */,
 				01B4DC32214E206400AD9C90 /* Assets.xcassets */,
 				C0C1A25329093863009F149C /* Color+Extension.swift */,
 			);
@@ -110,8 +121,17 @@
 				C0C1A2462906AB0B009F149C /* MainApp.swift */,
 				C0C1A2482906AB76009F149C /* ContentView.swift */,
 				01B4DC37214E206400AD9C90 /* Info.plist */,
+				C0E75FCE2909B7A800D6FEC7 /* AppViewModel.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		C0E75FC52909A91400D6FEC7 /* Logging */ = {
+			isa = PBXGroup;
+			children = (
+				C0E75FC62909A93100D6FEC7 /* OSLog+Extension.swift */,
+			);
+			path = Logging;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,8 +207,12 @@
 				C0C1A2502906B53A009F149C /* PointerViewModel.swift in Sources */,
 				C0C1A25429093863009F149C /* Color+Extension.swift in Sources */,
 				C0C1A2492906AB76009F149C /* ContentView.swift in Sources */,
-				01B4DC41214E20BC00AD9C90 /* LoactionManager.swift in Sources */,
+				C0E75FCD2909AF9E00D6FEC7 /* LocationUtils.swift in Sources */,
+				C0E75FC72909A93100D6FEC7 /* OSLog+Extension.swift in Sources */,
+				01B4DC41214E20BC00AD9C90 /* JCLoactionManager.swift in Sources */,
 				C0C1A24E2906AD49009F149C /* PointerView.swift in Sources */,
+				C0E75FCF2909B7A800D6FEC7 /* AppViewModel.swift in Sources */,
+				C0E75FCB2909AE6E00D6FEC7 /* LocationPointer.swift in Sources */,
 				C0C1A2472906AB0B009F149C /* MainApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

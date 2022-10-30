@@ -10,23 +10,11 @@ import Combine
 import os.log
 
 class PointerViewModel: ObservableObject {
-    private let locationManager = JCLocationManager()
     @Published var angle: Double? = .none
+    var locationCancellable: Cancellable?
     
-    init() {
-        locationManager.setDelegate(self)
-    }
-}
-
-extension PointerViewModel: JCLocationManagerDelegate {
-    func locationManager(_ fromNorth: Double, direction: Double) {
-        var normelizedDirection = direction - fromNorth
-        if normelizedDirection >= Double.pi * 2 {
-            normelizedDirection = normelizedDirection - Double.pi * 2
-        } else if normelizedDirection < 0 {
-            normelizedDirection = Double.pi * 2 + normelizedDirection
-        }
-        
-        angle = normelizedDirection
+    init(pointer: LocationPointer) {
+        locationCancellable = pointer.pointer
+            .sink { [weak self] in self?.angle = $0 }
     }
 }

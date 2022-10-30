@@ -10,7 +10,7 @@ import SwiftUI
 import os.log
 
 struct PointerView: View {
-    @ObservedObject var viewModel: PointerViewModel = PointerViewModel()
+    @ObservedObject var viewModel: PointerViewModel
     @State var showArrow: Bool = true
     
     var body: some View {
