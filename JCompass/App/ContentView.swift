@@ -32,11 +32,11 @@ struct ContentView: View {
                 Spacer()
                 Text("🤷")
                     .font(.system(size: 95))
-                Text("Location permissions are not granted")
+                Text("location_permission_privilege_title")
                     .font(.largeTitle)
-                Text("In order to point you to Jerusalem, please grant location priveleges")
+                Text("location_permission_privilege_body")
                     .font(.subheadline)
-                Button("Grant Priveleges") {
+                Button("location_permission_privilege_cta") {
                     guard let url = URL(string: UIApplication.openSettingsURLString)
                     else {
                         os_log(.error, "could not create setting url")

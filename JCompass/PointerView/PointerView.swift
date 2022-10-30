@@ -21,6 +21,7 @@ struct PointerView: View {
                     .padding()
                 ShoeprintView(size: geometry.size, showArrow: showArrow)
                     .rotationEffect(.radians(viewModel.angle ?? 0))
+                    .environment(\.layoutDirection, .leftToRight) // RTL mirrored angle calculation
             }
         }
     }
@@ -34,7 +35,7 @@ struct PointerView: View {
                 HStack {
                     Spacer()
                     Toggle(isOn: showArrow) {
-                        Text("Show Arrow")
+                        Text("pointer_show_arrow")
                             .foregroundColor(.goldPrimaryLight)
                     }
                     .tint(Color.goldPrimaryDark)

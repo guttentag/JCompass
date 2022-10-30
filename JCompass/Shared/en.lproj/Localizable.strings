@@ -1,0 +1,4 @@
+"location_permission_privilege_title" = "Location permissions are not granted";
+"location_permission_privilege_body" = "In order to point you to Jerusalem, please grant location priveleges";
+"location_permission_privilege_cta" = "Grant Privileges";
+"pointer_show_arrow" = "Show Arrow";
