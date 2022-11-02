@@ -20,6 +20,7 @@
 		C0E75FCD2909AF9E00D6FEC7 /* LocationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E75FCC2909AF9E00D6FEC7 /* LocationUtils.swift */; };
 		C0E75FCF2909B7A800D6FEC7 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E75FCE2909B7A800D6FEC7 /* AppViewModel.swift */; };
 		C0E75FD2290EA52B00D6FEC7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C0E75FD4290EA52B00D6FEC7 /* Localizable.strings */; };
+		C0E75FDA2912842300D6FEC7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C0E75FDC2912842300D6FEC7 /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,8 @@
 		C0E75FCE2909B7A800D6FEC7 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
 		C0E75FD3290EA52B00D6FEC7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C0E75FD5290EA52F00D6FEC7 /* he */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = he; path = he.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C0E75FDB2912842300D6FEC7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C0E75FDD2912842800D6FEC7 /* he */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = he; path = he.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +118,7 @@
 				01B4DC32214E206400AD9C90 /* Assets.xcassets */,
 				C0C1A25329093863009F149C /* Color+Extension.swift */,
 				C0E75FD4290EA52B00D6FEC7 /* Localizable.strings */,
+				C0E75FDC2912842300D6FEC7 /* InfoPlist.strings */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -199,6 +203,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01B4DC33214E206400AD9C90 /* Assets.xcassets in Resources */,
+				C0E75FDA2912842300D6FEC7 /* InfoPlist.strings in Resources */,
 				C0E75FD2290EA52B00D6FEC7 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -233,6 +238,15 @@
 				C0E75FD5290EA52F00D6FEC7 /* he */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		C0E75FDC2912842300D6FEC7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C0E75FDB2912842300D6FEC7 /* en */,
+				C0E75FDD2912842800D6FEC7 /* he */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -361,6 +375,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 48D8W284YY;
 				INFOPLIST_FILE = JCompass/App/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.navigation";
@@ -369,7 +384,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.gutte.JCompass;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = me.gutte.pointme.jerusalem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -384,6 +400,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 48D8W284YY;
 				INFOPLIST_FILE = JCompass/App/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.navigation";
@@ -392,7 +409,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.gutte.JCompass;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = me.gutte.pointme.jerusalem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
